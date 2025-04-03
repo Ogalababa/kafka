@@ -1,0 +1,16 @@
+{
+  "name": "jdbc-sink-connector-db02",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "dbserver1.SalesLT.Product",
+    "connection.url": "jdbc:sqlserver://kafkadatabase.database.windows.net:1433;databaseName=database02;user=${DB_USER};password=${DB_PASSWORD};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30",
+    "auto.create": "true",
+    "auto.evolve": "true",
+    "insert.mode": "upsert",
+    "pk.mode": "record_key",
+    "pk.fields": "ProductID",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+  }
+}

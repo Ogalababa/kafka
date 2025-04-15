@@ -1,7 +1,6 @@
 import React from 'react';
 import KafkaStatus from './components/KafkaStatus';
-import logo from './assets/exact-logo.svg'; // 你可以先放一个 logo 文件进去
-//
+import logo from './assets/exact-logo.png'; // 你可以先放一个 logo 文件进去
 
 function App() {
   return (
@@ -26,3 +25,4 @@ function App() {
 }
 
 export default App;
+

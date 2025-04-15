@@ -34,3 +34,7 @@ Thumbs.db
 *.tmp
 *.old
 
+# ssh
+.ssh/
+.local/
+

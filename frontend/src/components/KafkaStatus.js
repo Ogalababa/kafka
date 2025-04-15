@@ -6,19 +6,33 @@ const KafkaStatus = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // 请求 connector 名称列表并逐个拉状态
     useEffect(() => {
         axios.get('/kafka/connectors')
             .then(async res => {
                 const names = Array.isArray(res.data) ? res.data : [];
-                const statusList = await Promise.all(names.map(async name => {
-                    try {
-                        const statusRes = await axios.get(`/kafka/${name}/status`);
-                        return { name, ...statusRes.data };
-                    } catch (err) {
-                        return { name, error: err.toString() };
-                    }
-                }));
+
+                const statusList = await Promise.all(
+                    names.map(async name => {
+                        try {
+                            const statusRes = await axios.get(`/kafka/connectors/${name}/status`);
+                            return {
+                                name,
+                                status: statusRes.data.connector?.state,
+                                type: statusRes.data.type,
+                                worker: statusRes.data.connector?.worker_id,
+                                error: null,
+                            };
+                        } catch (err) {
+                            return {
+                                name,
+                                status: 'Error',
+                                type: '—',
+                                worker: '—',
+                                error: err.toString(),
+                            };
+                        }
+                    })
+                );
 
                 setConnectors(statusList);
                 setLoading(false);
@@ -35,36 +49,32 @@ const KafkaStatus = () => {
     return (
         <div>
             <h2 className="text-xl font-semibold mb-4">Kafka Connectors</h2>
-            {connectors.length === 0 ? (
-                <p>Geen connectors gevonden.</p>
-            ) : (
-                <table className="table-auto w-full border">
-                    <thead>
-                    <tr className="bg-gray-100">
-                        <th className="px-4 py-2 text-left">Naam</th>
-                        <th className="px-4 py-2 text-left">Status</th>
-                        <th className="px-4 py-2 text-left">Type</th>
-                        <th className="px-4 py-2 text-left">Worker</th>
+            <table className="table-auto w-full border">
+                <thead>
+                <tr className="bg-gray-100">
+                    <th className="px-4 py-2 text-left">Naam</th>
+                    <th className="px-4 py-2 text-left">Status</th>
+                    <th className="px-4 py-2 text-left">Type</th>
+                    <th className="px-4 py-2 text-left">Worker</th>
+                </tr>
+                </thead>
+                <tbody>
+                {connectors.map((c, index) => (
+                    <tr key={index} className="border-t">
+                        <td className="px-4 py-2">{c.name}</td>
+                        <td className={`px-4 py-2 font-semibold ${
+                            c.status === 'RUNNING' ? 'text-green-600' :
+                                c.status === 'FAILED' ? 'text-red-600' :
+                                    c.status === 'Error' ? 'text-yellow-600' : 'text-gray-600'
+                        }`}>
+                            {c.status}
+                        </td>
+                        <td className="px-4 py-2">{c.type}</td>
+                        <td className="px-4 py-2">{c.worker}</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    {connectors.map((c, index) => (
-                        <tr key={index} className="border-t">
-                            <td className="px-4 py-2">{c.name}</td>
-                            <td className="px-4 py-2">
-                                {c.error ? (
-                                    <span className="text-red-600">Error</span>
-                                ) : (
-                                    c.connector?.state || 'N/A'
-                                )}
-                            </td>
-                            <td className="px-4 py-2">{c.type || '—'}</td>
-                            <td className="px-4 py-2">{c.connector?.worker_id || '—'}</td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-            )}
+                ))}
+                </tbody>
+            </table>
         </div>
     );
 };

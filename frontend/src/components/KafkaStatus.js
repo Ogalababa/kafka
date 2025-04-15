@@ -47,37 +47,57 @@ const KafkaStatus = () => {
     if (error) return <p>Fout bij ophalen van data: {error}</p>;
 
     return (
-        <div>
-            <h2 className="text-xl font-semibold mb-4">Kafka Connectors</h2>
-            <table className="table-auto w-full border border-gray-200">
+        <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Kafka Connectors</h2>
+            <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #ccc' }}>
                 <thead>
-                <tr className="bg-gray-100">
-                    <th className="px-4 py-2 text-left">Status</th>
-                    <th className="px-4 py-2 text-left">Naam</th>
-                    <th className="px-4 py-2 text-left">Type</th>
-                    <th className="px-4 py-2 text-left">Worker</th>
+                <tr style={{ backgroundColor: '#f3f4f6' }}>
+                    <th style={thStyle}>Status</th>
+                    <th style={thStyle}>Naam</th>
+                    <th style={thStyle}>Type</th>
+                    <th style={thStyle}>Worker</th>
                 </tr>
                 </thead>
                 <tbody>
                 {connectors.map((c, index) => (
-                    <tr key={index} className="border-t border-gray-200 hover:bg-gray-50">
-                        <td className="px-4 py-2">
+                    <tr key={index} style={{ borderTop: '1px solid #e5e7eb' }}>
+                        <td style={tdStyle}>
                 <span
-                    className={`inline-block w-3 h-3 rounded-full ${
-                        c.status === 'RUNNING' ? 'bg-green-500' : 'bg-red-500'
-                    }`}
+                    style={{
+                        display: 'inline-block',
+                        width: '10px',
+                        height: '10px',
+                        borderRadius: '50%',
+                        backgroundColor: c.status === 'RUNNING' ? 'green' : 'red',
+                        marginRight: '8px',
+                        verticalAlign: 'middle',
+                    }}
                     title={c.status}
                 ></span>
+                            <span style={{ verticalAlign: 'middle' }}>
+                  {c.status === 'RUNNING' ? 'Running' : 'Failed'}
+                </span>
                         </td>
-                        <td className="px-4 py-2">{c.name}</td>
-                        <td className="px-4 py-2">{c.type}</td>
-                        <td className="px-4 py-2">{c.worker}</td>
+                        <td style={tdStyle}>{c.name}</td>
+                        <td style={tdStyle}>{c.type}</td>
+                        <td style={tdStyle}>{c.worker}</td>
                     </tr>
                 ))}
                 </tbody>
             </table>
         </div>
     );
+};
+
+// 公共样式
+const thStyle = {
+    textAlign: 'left',
+    padding: '8px 16px',
+    borderBottom: '1px solid #ccc',
+};
+
+const tdStyle = {
+    padding: '8px 16px',
 };
 
 export default KafkaStatus;

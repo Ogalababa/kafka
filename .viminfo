@@ -11,10 +11,10 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
+|2,0,1744701381,,"wq"
 :q
 |2,0,1744657586,,"q"
-:wq
-|2,0,1744549150,,"wq"
 
 # Search String History (newest to oldest):
 
@@ -27,32 +27,52 @@
 # Registers:
 
 # File marks:
-'0  1  0  /tmp/crontab.Twdxwf/crontab
-|4,48,1,0,1744657586,"/tmp/crontab.Twdxwf/crontab"
-'1  1  0  ~/kafka/logs/connect.log.2025-04-14-15
-|4,49,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
-'2  1  0  /tmp/crontab.tNc8Yt/crontab
-|4,50,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
-'3  1  0  /tmp/crontab.8k322W/crontab
-|4,51,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
-'4  1  0  /tmp/crontab.pzSlMH/crontab
-|4,52,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
-'5  24  25  /tmp/crontab.s0lfvn/crontab
-|4,53,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
-'6  1  0  /tmp/crontab.LYv3qW/crontab
-|4,54,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
-'7  1  0  /tmp/crontab.Wjrmpz/crontab
-|4,55,1,0,1744492321,"/tmp/crontab.Wjrmpz/crontab"
-'8  24  79  /tmp/crontab.Nv7tzx/crontab
-|4,56,24,79,1744492291,"/tmp/crontab.Nv7tzx/crontab"
+'0  7  1  ~/.git/MERGE_MSG
+|4,48,7,1,1744701381,"~/.git/MERGE_MSG"
+'1  1  0  /tmp/crontab.Twdxwf/crontab
+|4,49,1,0,1744657586,"/tmp/crontab.Twdxwf/crontab"
+'2  1  0  ~/kafka/logs/connect.log.2025-04-14-15
+|4,50,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
+'3  1  0  /tmp/crontab.tNc8Yt/crontab
+|4,51,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
+'4  1  0  /tmp/crontab.8k322W/crontab
+|4,52,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+'5  1  0  /tmp/crontab.pzSlMH/crontab
+|4,53,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+'6  24  25  /tmp/crontab.s0lfvn/crontab
+|4,54,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
+'7  1  0  /tmp/crontab.LYv3qW/crontab
+|4,55,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
+'8  1  0  /tmp/crontab.Wjrmpz/crontab
+|4,56,1,0,1744492321,"/tmp/crontab.Wjrmpz/crontab"
+'9  24  79  /tmp/crontab.Nv7tzx/crontab
+|4,57,24,79,1744492291,"/tmp/crontab.Nv7tzx/crontab"
 
 # Jumplist (newest first):
+-'  7  1  ~/.git/MERGE_MSG
+|4,39,7,1,1744701381,"~/.git/MERGE_MSG"
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1744701339,"~/.git/MERGE_MSG"
+-'  1  0  /tmp/crontab.Twdxwf/crontab
+|4,39,1,0,1744657586,"/tmp/crontab.Twdxwf/crontab"
 -'  1  0  /tmp/crontab.Twdxwf/crontab
 |4,39,1,0,1744657586,"/tmp/crontab.Twdxwf/crontab"
 -'  1  0  ~/kafka/logs/connect.log.2025-04-14-15
 |4,39,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
 -'  1  0  ~/kafka/logs/connect.log.2025-04-14-15
 |4,39,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
+-'  1  0  ~/kafka/logs/connect.log.2025-04-14-15
+|4,39,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
+-'  1  0  ~/kafka/logs/connect.log.2025-04-14-15
+|4,39,1,0,1744657564,"~/kafka/logs/connect.log.2025-04-14-15"
+-'  1  0  /tmp/crontab.tNc8Yt/crontab
+|4,39,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
+-'  1  0  /tmp/crontab.tNc8Yt/crontab
+|4,39,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
+-'  1  0  /tmp/crontab.tNc8Yt/crontab
+|4,39,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
+-'  1  0  /tmp/crontab.tNc8Yt/crontab
+|4,39,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
 -'  1  0  /tmp/crontab.tNc8Yt/crontab
 |4,39,1,0,1744657509,"/tmp/crontab.tNc8Yt/crontab"
 -'  1  0  /tmp/crontab.tNc8Yt/crontab
@@ -77,6 +97,54 @@
 |4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
 -'  1  0  /tmp/crontab.8k322W/crontab
 |4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.8k322W/crontab
+|4,39,1,0,1744549150,"/tmp/crontab.8k322W/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
+-'  1  0  /tmp/crontab.pzSlMH/crontab
+|4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
 -'  1  0  /tmp/crontab.pzSlMH/crontab
 |4,39,1,0,1744549129,"/tmp/crontab.pzSlMH/crontab"
 -'  1  0  /tmp/crontab.pzSlMH/crontab
@@ -173,82 +241,23 @@
 |4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
 -'  24  25  /tmp/crontab.s0lfvn/crontab
 |4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.s0lfvn/crontab
-|4,39,1,0,1744549099,"/tmp/crontab.s0lfvn/crontab"
--'  1  0  /tmp/crontab.LYv3qW/crontab
-|4,39,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
--'  1  0  /tmp/crontab.LYv3qW/crontab
-|4,39,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
--'  1  0  /tmp/crontab.LYv3qW/crontab
-|4,39,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
--'  1  0  /tmp/crontab.LYv3qW/crontab
-|4,39,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
--'  1  0  /tmp/crontab.LYv3qW/crontab
-|4,39,1,0,1744493689,"/tmp/crontab.LYv3qW/crontab"
+-'  24  25  /tmp/crontab.s0lfvn/crontab
+|4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
+-'  24  25  /tmp/crontab.s0lfvn/crontab
+|4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
+-'  24  25  /tmp/crontab.s0lfvn/crontab
+|4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
+-'  24  25  /tmp/crontab.s0lfvn/crontab
+|4,39,24,25,1744549109,"/tmp/crontab.s0lfvn/crontab"
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/MERGE_MSG
+	*	1744701380	0
+	"	7	1
+	^	7	2
+	.	7	1
+	+	7	1
 
 > /tmp/crontab.Twdxwf/crontab
 	*	1744657585	0

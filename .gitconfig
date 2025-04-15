@@ -1,3 +1,7 @@
 [user]
 	name = Ogalababa
 	email = delay7.su@gmail.com
+[http]
+	postBuffer = 524288000
+[pull]
+	rebase = false

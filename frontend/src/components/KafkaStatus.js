@@ -7,7 +7,7 @@ const KafkaStatus = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(':8083/connectors')
+    axios.get('/kafka/connectors')
       .then(res => {
         const data = Array.isArray(res.data) ? res.data : [];
         setConnectors(data);

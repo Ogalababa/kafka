@@ -9,7 +9,7 @@ function App() {
       <header className="bg-white shadow-md p-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <img src={logo} alt="Exact logo" className="h-8" />
-          <h1 className="text-2xl font-bold">exact database同步系统</h1>
+          <h1 className="text-2xl font-bold">Exact database synchronisatiesysteem</h1>
         </div>
         <nav>
           <ul className="flex space-x-6">

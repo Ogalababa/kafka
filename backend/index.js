@@ -7,7 +7,8 @@ const PORT = 5000;
 app.use(express.json());
 
 app.get('/tables', (req, res) => {
-  res.json({ message: '✅ 后端 API 正常运行（GET /api/tables）' });
+  console.log('📥 收到 GET /tables 请求');
+  res.json({ message: '✅ 后端 API 正常运行（GET /tables）' });
 });
 
 // 后端 API 版本：POST /api/tables

@@ -6,12 +6,12 @@ const PORT = 5000;
 // 支持 JSON body 解析
 app.use(express.json());
 
-app.get('/api/tables', (req, res) => {
+app.get('/tables', (req, res) => {
   res.json({ message: '✅ 后端 API 正常运行（GET /api/tables）' });
 });
 
 // 后端 API 版本：POST /api/tables
-app.post('/api/tables', async (req, res) => {
+app.post('/tables', async (req, res) => {
   const {
     hostname,
     port,

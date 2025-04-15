@@ -1,0 +1,2 @@
+*.log
+kafka/data/kraft-logs/

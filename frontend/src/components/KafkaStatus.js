@@ -49,26 +49,27 @@ const KafkaStatus = () => {
     return (
         <div>
             <h2 className="text-xl font-semibold mb-4">Kafka Connectors</h2>
-            <table className="table-auto w-full border">
+            <table className="table-auto w-full border border-gray-200">
                 <thead>
                 <tr className="bg-gray-100">
-                    <th className="px-4 py-2 text-left">Naam</th>
                     <th className="px-4 py-2 text-left">Status</th>
+                    <th className="px-4 py-2 text-left">Naam</th>
                     <th className="px-4 py-2 text-left">Type</th>
                     <th className="px-4 py-2 text-left">Worker</th>
                 </tr>
                 </thead>
                 <tbody>
                 {connectors.map((c, index) => (
-                    <tr key={index} className="border-t">
-                        <td className="px-4 py-2">{c.name}</td>
-                        <td className={`px-4 py-2 font-semibold ${
-                            c.status === 'RUNNING' ? 'text-green-600' :
-                                c.status === 'FAILED' ? 'text-red-600' :
-                                    c.status === 'Error' ? 'text-yellow-600' : 'text-gray-600'
-                        }`}>
-                            {c.status}
+                    <tr key={index} className="border-t border-gray-200 hover:bg-gray-50">
+                        <td className="px-4 py-2">
+                <span
+                    className={`inline-block w-3 h-3 rounded-full ${
+                        c.status === 'RUNNING' ? 'bg-green-500' : 'bg-red-500'
+                    }`}
+                    title={c.status}
+                ></span>
                         </td>
+                        <td className="px-4 py-2">{c.name}</td>
                         <td className="px-4 py-2">{c.type}</td>
                         <td className="px-4 py-2">{c.worker}</td>
                     </tr>

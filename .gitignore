@@ -1,4 +1,36 @@
+# 忽略所有日志文件
 *.log
+
+# Kafka 数据和日志
 kafka/data/kraft-logs/
 kafka/logs/
-.cache
+
+# JetBrains 缓存目录
+.cache/
+.idea/
+
+# 前端项目
+/frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# 后端项目
+/backend/node_modules/
+backend/.env
+backend/.DS_Store
+backend/dist/
+backend/build/
+
+# 系统缓存
+.DS_Store
+Thumbs.db
+
+# 其他忽略
+*.swp
+*.bak
+*.tmp
+*.old
+

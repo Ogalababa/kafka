@@ -38,3 +38,15 @@ Thumbs.db
 .ssh/
 .local/
 **/.ssh/
+
+.config/
+.bash_history
+.bash_logout
+.bash_profile
+.gitconfig
+.selected_editor
+.sudo_as_admin_successful
+.viminfo
+.wget-hsts
+.*
+!/.gitignore

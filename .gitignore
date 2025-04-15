@@ -1,2 +1,4 @@
 *.log
 kafka/data/kraft-logs/
+kafka/logs/
+.cache

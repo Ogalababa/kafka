@@ -1,3 +1,0 @@
-[2025-04-13 14:41:45,870] INFO [Broker id=1] Transitioning 1 partition(s) to local leaders. (state.change.logger)
-[2025-04-13 14:41:45,873] INFO [Broker id=1] Creating new partition azure_sql_database01_SalesLT_Product-0 with topic id uhFZzt5FTW6O0nZKN38CFw. (state.change.logger)
-[2025-04-13 14:41:45,880] INFO [Broker id=1] Leader azure_sql_database01_SalesLT_Product-0 with topic id Some(uhFZzt5FTW6O0nZKN38CFw) starts at leader epoch 0 from offset 0 with partition epoch 0, high watermark 0, ISR [1], adding replicas [] and removing replicas [] . Previous leader None and previous leader epoch was -1. (state.change.logger)

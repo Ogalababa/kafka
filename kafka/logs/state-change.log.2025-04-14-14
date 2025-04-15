@@ -1,6 +1,0 @@
-[2025-04-14 14:13:25,655] INFO [Broker id=1] Transitioning 1 partition(s) to local leaders. (state.change.logger)
-[2025-04-14 14:13:25,657] INFO [Broker id=1] Creating new partition schema-changes.accounttypes-0 with topic id ehChjk7aSoOMSBLmDQnRLg. (state.change.logger)
-[2025-04-14 14:13:25,669] INFO [Broker id=1] Leader schema-changes.accounttypes-0 with topic id Some(ehChjk7aSoOMSBLmDQnRLg) starts at leader epoch 0 from offset 0 with partition epoch 0, high watermark 0, ISR [1], adding replicas [] and removing replicas [] . Previous leader None and previous leader epoch was -1. (state.change.logger)
-[2025-04-14 14:13:26,215] INFO [Broker id=1] Transitioning 1 partition(s) to local leaders. (state.change.logger)
-[2025-04-14 14:13:26,215] INFO [Broker id=1] Creating new partition glob01_server_accounttypes.Glob01.dbo.AccountTypes-0 with topic id 30HozZMST12kr9v94M3PZg. (state.change.logger)
-[2025-04-14 14:13:26,218] INFO [Broker id=1] Leader glob01_server_accounttypes.Glob01.dbo.AccountTypes-0 with topic id Some(30HozZMST12kr9v94M3PZg) starts at leader epoch 0 from offset 0 with partition epoch 0, high watermark 0, ISR [1], adding replicas [] and removing replicas [] . Previous leader None and previous leader epoch was -1. (state.change.logger)

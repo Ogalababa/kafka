@@ -33,7 +33,7 @@ const Step6SinkDatabases = ({ formData, setFormData, prevStep, nextStep }) => {
 
         for (const sink of formData.sinkDatabases) {
             try {
-                const res = await axios.post('/api/databaselogin', sink);
+                const res = await axios.post('/api/database-login', sink);
                 if (!res.data.success) {
                     setError(`❌ Login failed for database: ${sink.databaseName}`);
                     setLoading(false);

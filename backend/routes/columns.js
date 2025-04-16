@@ -1,4 +1,3 @@
-// routes/columns.js
 const express = require('express');
 const sql = require('mssql');
 const router = express.Router();
@@ -21,7 +20,9 @@ router.post('/', async (req, res) => {
         user,
         password,
         database: databaseName,
-        options: { trustServerCertificate: true }
+        options: {
+            trustServerCertificate: true
+        }
     };
 
     try {
@@ -31,6 +32,9 @@ router.post('/', async (req, res) => {
       SELECT 
         cols.COLUMN_NAME AS columnName,
         cols.DATA_TYPE AS dataType,
+        COLUMNPROPERTY(OBJECT_ID(cols.TABLE_SCHEMA + '.' + cols.TABLE_NAME), cols.COLUMN_NAME, 'IsIdentity') AS isIdentity,
+        COLUMNPROPERTY(OBJECT_ID(cols.TABLE_SCHEMA + '.' + cols.TABLE_NAME), cols.COLUMN_NAME, 'IsComputed') AS isComputed,
+        cols.COLUMN_DEFAULT AS hasDefault,
         CASE WHEN pk.COLUMN_NAME IS NOT NULL THEN 1 ELSE 0 END AS isPrimaryKey
       FROM INFORMATION_SCHEMA.COLUMNS cols
       LEFT JOIN (
@@ -46,16 +50,22 @@ router.post('/', async (req, res) => {
       WHERE cols.TABLE_NAME = '${table}' AND cols.TABLE_SCHEMA = '${schema}'
     `);
 
-        const columns = result.recordset.map(row => ({
-            columnName: row.columnName,
-            dataType: row.dataType,
-            isPrimaryKey: row.isPrimaryKey === 1
-        }));
+        const columns = result.recordset
+            .filter(row =>
+                row.isIdentity !== 1 &&     // 不是自增
+                row.isComputed !== 1       // 不是计算列
+            )
+            .map(row => ({
+                columnName: row.columnName,
+                dataType: row.dataType,
+                isPrimaryKey: row.isPrimaryKey === 1,
+                hasDefault: !!row.hasDefault
+            }));
 
         res.json(columns);
     } catch (err) {
         console.error('❌ column query error:', err);
-        res.status(500).json({ error: '列信息查询失败', detail: err.toString() });
+        res.status(500).json({ error: 'Ophalen van kolominformatie mislukt', detail: err.toString() });
     }
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './assets/exact-logo.svg'; // 确保这个路径是对的
-import KafkaStatus from './KafkaStatus';
+import KafkaStatus from './components/KafkaStatus';
 
 function App() {
     return (

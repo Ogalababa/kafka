@@ -50,3 +50,4 @@ Thumbs.db
 .wget-hsts
 .*
 !/.gitignore
+frontend/tailwindcss

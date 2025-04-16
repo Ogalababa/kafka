@@ -39,7 +39,7 @@ const AddConnectorModal = ({ closeModal }) => {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-start pt-24 z-50">
-            <div className="bg-white rounded-xl shadow-xl w-[600px] p-6">
+            <div className="bg-white rounded-xl shadow-xl w-[600px] max-h-[80vh] overflow-y-auto p-6">
                 <div className="flex justify-between mb-4">
                     <h2 className="text-xl font-semibold">🛠️ Configure Connector</h2>
                     <button onClick={closeModal} className="text-xl font-bold hover:text-red-500">×</button>

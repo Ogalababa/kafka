@@ -3,12 +3,13 @@ import axios from 'axios';
 
 const Step7Overview = ({ formData, prevStep, closeModal }) => {
     const [loading, setLoading] = useState(false);
-    const [done, setDone] = useState(false);
+    const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
 
     const handleConfirm = async () => {
         setLoading(true);
         setError(null);
+        setResponse(null);
 
         try {
             const payload = {
@@ -19,20 +20,20 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
                 sinkDatabases: formData.sinkDatabases,
             };
 
-            await axios.post('/api/addconnector', payload);
-            setDone(true);
+            const res = await axios.post('/api/addconnector', payload); // 正常版（如果你启用测试模式，可以加 `?test=true`）
+            setResponse(res.data);
         } catch (err) {
-            setError('❌ Failed to add connector. Please try again.');
+            setError('❌ Failed to generate connector config.');
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div>
+        <div className="max-h-[70vh] overflow-y-auto">
             <h2 className="text-lg font-bold mb-4">Step 7: Overview</h2>
 
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm mb-4">
                 <p><strong>Connector Name:</strong> {formData.connectorName}</p>
                 <p><strong>Source Database:</strong> {formData.databaseInfo.databaseName}</p>
                 <p><strong>Selected Table:</strong> {formData.selectedTable}</p>
@@ -49,13 +50,21 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
             </div>
 
             {error && <p className="text-red-500 mt-4">{error}</p>}
-            {done && <p className="text-green-600 mt-4">✅ Connector added successfully!</p>}
+
+            {response && (
+                <div className="bg-gray-100 p-4 mt-4 rounded text-sm max-h-72 overflow-y-auto">
+                    <h3 className="font-semibold mb-2 text-gray-800">Generated Kafka Connector JSON:</h3>
+                    <pre className="whitespace-pre-wrap break-words text-xs">
+                        {JSON.stringify(response, null, 2)}
+                    </pre>
+                </div>
+            )}
 
             <div className="flex justify-between mt-6">
                 <button onClick={prevStep} className="bg-gray-300 px-4 py-2 rounded">Back</button>
                 <button
                     onClick={handleConfirm}
-                    disabled={loading || done}
+                    disabled={loading}
                     className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
                 >
                     {loading ? 'Submitting...' : 'Add Connector'}

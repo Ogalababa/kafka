@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Step4SelectTable = ({ formData, setFormData, prevStep }) => {
+const Step4SelectTable = ({ formData, setFormData, nextStep, prevStep }) => {
     const handleSelect = (e) => {
         setFormData({ ...formData, selectedTable: e.target.value });
     };
@@ -15,13 +15,18 @@ const Step4SelectTable = ({ formData, setFormData, prevStep }) => {
             >
                 <option value="">-- Choose a table --</option>
                 {formData.availableTables.map((t, idx) => (
-                    <option key={idx} value={t}>{t}</option>
+                    <option key={idx} value={t}>
+                        {t}
+                    </option>
                 ))}
             </select>
 
             <div className="flex justify-between">
-                <button onClick={prevStep} className="px-4 py-2 bg-gray-300 rounded">Back</button>
+                <button onClick={prevStep} className="px-4 py-2 bg-gray-300 rounded">
+                    Back
+                </button>
                 <button
+                    onClick={nextStep}
                     disabled={!formData.selectedTable}
                     className="px-4 py-2 bg-green-600 text-white rounded disabled:opacity-50"
                 >

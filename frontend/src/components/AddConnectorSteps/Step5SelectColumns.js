@@ -1,32 +1,6 @@
-// src/components/AddConnectorSteps/Step5SelectColumns.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const Step5SelectColumns = ({ dbInfo, selectedTable, selectedColumns, setSelectedColumns, onNext }) => {
-    const [columns, setColumns] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchColumns = async () => {
-            try {
-                const payload = {
-                    ...dbInfo,
-                    "table.name": selectedTable
-                };
-
-                const res = await axios.post('/api/columns', payload);
-                setColumns(res.data);
-                setLoading(false);
-            } catch (err) {
-                setError('Failed to fetch columns.');
-                setLoading(false);
-            }
-        };
-
-        fetchColumns();
-    }, [dbInfo, selectedTable]);
-
+const Step5SelectColumns = ({ columns, selectedColumns, setSelectedColumns, onNext }) => {
     const handleCheckboxChange = (columnName) => {
         setSelectedColumns((prev) =>
             prev.includes(columnName)
@@ -35,8 +9,7 @@ const Step5SelectColumns = ({ dbInfo, selectedTable, selectedColumns, setSelecte
         );
     };
 
-    if (loading) return <p>Loading columns...</p>;
-    if (error) return <p className="text-red-500">{error}</p>;
+    if (!columns || columns.length === 0) return <p className="text-red-500">No columns available</p>;
 
     return (
         <div>

@@ -45,7 +45,17 @@ const AddConnectorModal = ({ closeModal }) => {
                     <Step4SelectTable formData={formData} setFormData={setFormData} nextStep={nextStep} prevStep={prevStep} />
                 )}
                 {step === 5 && (
-                    <Step5SelectColumns formData={formData} setFormData={setFormData} prevStep={prevStep} />
+                    <Step5SelectColumns
+                        columns={formData.columns}
+                        selectedColumns={formData.selectedColumns || []}
+                        setSelectedColumns={(cols) =>
+                            setFormData({ ...formData, selectedColumns: cols })
+                        }
+                        onNext={() => {
+                            console.log('✅ Final form data:', formData);
+                            closeModal(); // 或者下一步操作
+                        }}
+                    />
                 )}
             </div>
         </div>

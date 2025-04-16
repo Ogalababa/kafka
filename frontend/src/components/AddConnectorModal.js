@@ -54,6 +54,7 @@ const AddConnectorModal = ({ closeModal }) => {
                         setFormData={setFormData}
                         nextStep={nextStep}
                         prevStep={prevStep}
+                        closeModal={closeModal}
                     />
                 )}
                 {step === 3 && (
@@ -62,6 +63,7 @@ const AddConnectorModal = ({ closeModal }) => {
                         setFormData={setFormData}
                         nextStep={nextStep}
                         prevStep={prevStep}
+                        closeModal={closeModal}
                     />
                 )}
                 {step === 4 && (
@@ -70,6 +72,7 @@ const AddConnectorModal = ({ closeModal }) => {
                         setFormData={setFormData}
                         nextStep={nextStep}
                         prevStep={prevStep}
+                        closeModal={closeModal}
                     />
                 )}
                 {step === 5 && (
@@ -78,13 +81,16 @@ const AddConnectorModal = ({ closeModal }) => {
                         setFormData={setFormData}
                         nextStep={nextStep}
                         prevStep={prevStep}
+                        closeModal={closeModal}
                     />
                 )}
                 {step === 6 && (
                     <Step6SinkDatabases
                         formData={formData}
                         setFormData={setFormData}
+                        nextStep={nextStep}
                         prevStep={prevStep}
+                        closeModal={closeModal}
                     />
                 )}
                 {step === 7 && (

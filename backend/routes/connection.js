@@ -3,7 +3,7 @@ const express = require('express');
 const sql = require('mssql');
 const router = express.Router();
 
-router.post('/databaselogin', async (req, res) => {
+router.post('/database-login', async (req, res) => {
     const {
         hostname,
         port,

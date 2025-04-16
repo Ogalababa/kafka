@@ -25,7 +25,7 @@ const Step4SelectTable = ({ formData, setFormData, prevStep }) => {
                     disabled={!formData.selectedTable}
                     className="px-4 py-2 bg-green-600 text-white rounded disabled:opacity-50"
                 >
-                    ✅ Confirm
+                    ✅ Next
                 </button>
             </div>
         </div>

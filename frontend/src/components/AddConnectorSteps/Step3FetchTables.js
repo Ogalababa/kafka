@@ -15,7 +15,7 @@ const Step3FetchTables = ({ formData, setFormData, nextStep, prevStep }) => {
             setFormData({ ...formData, availableTables: res.data });
             nextStep();
         } catch (err) {
-            setError('❌ 获取表失败，请检查数据库配置');
+            setError('❌ Failed to obtain the table, please check the database configuration');
         } finally {
             setLoading(false);
         }
@@ -23,7 +23,7 @@ const Step3FetchTables = ({ formData, setFormData, nextStep, prevStep }) => {
 
     return (
         <div>
-            <p className="mb-4">点击按钮获取当前数据库中的所有表</p>
+            <p className="mb-4">Click the button to get all tables in the current database</p>
             <div className="flex justify-between">
                 <button onClick={prevStep} className="px-4 py-2 bg-gray-300 rounded">Back</button>
                 <button onClick={handleFetch} disabled={loading} className="px-4 py-2 bg-blue-500 text-white rounded">

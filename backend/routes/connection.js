@@ -3,12 +3,12 @@ const sql = require('mssql');
 const router = express.Router();
 
 // ✅ 测试 GET 路由
-router.get('/database-login', (req, res) => {
+router.get('/', (req, res) => {
     res.json({ message: '✅ Database login API is up and running!' });
 });
 
 // ✅ POST 检查是否 db_owner
-router.post('/database-login', async (req, res) => {
+router.post('/', async (req, res) => {
     const {
         hostname,
         port,

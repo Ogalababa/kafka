@@ -6,7 +6,7 @@ import Step3FetchTables from './AddConnectorSteps/Step3FetchTables';
 import Step4SelectTable from './AddConnectorSteps/Step4SelectTable';
 import Step5SelectColumns from './AddConnectorSteps/Step5SelectColumns';
 import Step6SinkDatabases from './AddConnectorSteps/Step6SinkDatabases';
-import Step7Overview from "./AddConnectorSteps/ Step7Overview";
+import Step7Overview from "./AddConnectorSteps/Step7Overview";
 
 const AddConnectorModal = ({ closeModal }) => {
     const [step, setStep] = useState(1);

@@ -86,6 +86,13 @@ const AddConnectorModal = ({ closeModal }) => {
                         prevStep={prevStep}
                     />
                 )}
+                {step === 7 && (
+                    <Step7Overview
+                        formData={formData}
+                        prevStep={prevStep}
+                        closeModal={closeModal}
+                    />
+                )}
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
+// src/components/AddConnectorSteps/Step6SinkDatabases.js
 import React from 'react';
 
-const Step6SinkDatabases = ({ formData, setFormData, prevStep }) => {
+const Step6SinkDatabases = ({ formData, setFormData, prevStep, nextStep }) => {
     const handleChange = (index, field, value) => {
         const newSinks = [...formData.sinkDatabases];
         newSinks[index][field] = value;
@@ -41,9 +42,12 @@ const Step6SinkDatabases = ({ formData, setFormData, prevStep }) => {
                 </div>
             ))}
 
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-6">
                 <button onClick={prevStep} className="px-4 py-2 bg-gray-300 rounded">Back</button>
-                <button onClick={addSink} className="px-4 py-2 bg-green-500 text-white rounded">➕ Add Sink</button>
+                <div className="flex gap-4">
+                    <button onClick={addSink} className="px-4 py-2 bg-green-500 text-white rounded">➕ Add Sink</button>
+                    <button onClick={nextStep} className="px-4 py-2 bg-blue-600 text-white rounded">Next</button>
+                </div>
             </div>
         </div>
     );

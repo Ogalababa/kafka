@@ -8,6 +8,7 @@ app.use(express.json());
 app.use('/tables', require('./routes/tables'));
 app.use('/columns', require('./routes/columns'));
 app.use('/database-login', require('./routes/connection'));
+app.use('/addconnector', require('./routes/addconnector'))
 
 app.listen(PORT, () => {
   console.log(`✅ Backend running at http://localhost:${PORT}`);

@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
 
     // ✅ 构建 Sink Connectors 配置列表
     const sinkConnectorConfigs = sinkDatabases.map((sink) => ({
-        name: `sink-${connectorName}-${sink.databaseName}`,
+        name: `sink-${sink.databaseName}-${connectorName}`,
         config: {
             "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
             "tasks.max": "1",

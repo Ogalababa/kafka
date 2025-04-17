@@ -1,8 +1,9 @@
-// routes/addconnector.js (测试版本)
+// routes/addconnector.js (Production version)
 const express = require('express');
+const axios = require('axios');
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const {
         connectorName,
         sourceDatabase,
@@ -69,12 +70,27 @@ router.post('/', (req, res) => {
         }
     }));
 
-    // ✅ 返回所有配置到前端进行调试
-    res.json({
-        message: '🧪 Test mode: generated connector configs',
-        sourceConnector: sourceConnectorConfig,
-        sinkConnectors: sinkConnectorConfigs
-    });
+    try {
+        const sourceResp = await axios.post('http://localhost:8083/connectors/', sourceConnectorConfig);
+
+        const sinkResponses = [];
+        for (const sinkConfig of sinkConnectorConfigs) {
+            const response = await axios.post('http://localhost:8083/connectors/', sinkConfig);
+            sinkResponses.push({ name: sinkConfig.name, status: response.status, data: response.data });
+        }
+
+        res.status(201).json({
+            message: '✅ All connectors created successfully!',
+            sourceResponse: sourceResp.data,
+            sinkResponses
+        });
+    } catch (err) {
+        console.error('❌ Connector creation failed:', err.response?.data || err.message);
+        res.status(err.response?.status || 500).json({
+            error: '❌ Failed to create connector',
+            detail: err.response?.data || err.message
+        });
+    }
 });
 
 module.exports = router;

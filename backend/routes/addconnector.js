@@ -12,11 +12,10 @@ router.post('/', (req, res) => {
     } = req.body;
 
     const [schema, tableName] = selectedTable.split('.');
-    const topicPrefix = `${connectorName}_${selectedTable}`;
 
     // ✅ 构建 Source Connector 配置
     const sourceConnectorConfig = {
-        name: `source-${connectorName}`,
+        name: `source-${sourceDatabase.databaseName}-${connectorName}`,
         config: {
             "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
             "tasks.max": "1",
@@ -36,8 +35,8 @@ router.post('/', (req, res) => {
             "snapshot.mode": "initial",
             "decimal.handling.mode": "double",
             "time.precision.mode": "adaptive_time_microseconds",
-            "topic.prefix": topicPrefix,
-            "topic.naming.strategy": "io.debezium.schema.SchemaTopicNamingStrategy"
+            "topic.prefix": connectorName,
+            "topic.naming.strategy": "io.debezium.schema.DefaultTopicNamingStrategy"
         }
     };
 
@@ -47,7 +46,7 @@ router.post('/', (req, res) => {
         config: {
             "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
             "tasks.max": "1",
-            "topics": `${topicPrefix}.${sourceDatabase.databaseName}.${selectedTable}`,
+            "topics": `${connectorName}.${sourceDatabase.databaseName}.${tableName}`,
             "connection.url": `jdbc:sqlserver://${sink.hostname}:${sink.port};databaseName=${sink.databaseName};encrypt=false;trustServerCertificate=true`,
             "connection.user": sink["connection.user"],
             "connection.password": sink["connection.password"],

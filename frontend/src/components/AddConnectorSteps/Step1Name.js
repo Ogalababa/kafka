@@ -23,7 +23,7 @@ const Step1Name = ({ formData, setFormData, nextStep, closeModal }) => {
             >
                 Next
             </button>
-            <button onClick={closeModal} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
+
         </div>
     );
 };

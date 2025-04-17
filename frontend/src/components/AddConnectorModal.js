@@ -1,4 +1,3 @@
-// src/components/AddConnectorModal.js
 import React, { useState } from 'react';
 import Step1Name from './AddConnectorSteps/Step1Name';
 import Step2Database from './AddConnectorSteps/Step2Database';
@@ -46,7 +45,12 @@ const AddConnectorModal = ({ closeModal }) => {
                 </div>
 
                 {step === 1 && (
-                    <Step1Name formData={formData} setFormData={setFormData} nextStep={nextStep} />
+                    <Step1Name
+                        formData={formData}
+                        setFormData={setFormData}
+                        nextStep={nextStep}
+                        closeModal={closeModal}
+                    />
                 )}
                 {step === 2 && (
                     <Step2Database

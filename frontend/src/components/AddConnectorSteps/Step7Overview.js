@@ -20,7 +20,7 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
                 sinkDatabases: formData.sinkDatabases,
             };
 
-            const res = await axios.post('/api/addconnector', payload); // 正常版（如果你启用测试模式，可以加 `?test=true`）
+            const res = await axios.post('/api/addconnector', payload);
             setResponse(res.data);
         } catch (err) {
             setError('❌ Failed to generate connector config.');
@@ -53,7 +53,7 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
 
             {response && (
                 <div className="bg-gray-100 p-4 mt-4 rounded text-sm max-h-72 overflow-y-auto">
-                    <h3 className="font-semibold mb-2 text-gray-800">Generated Kafka Connector JSON:</h3>
+                    <h3 className="font-semibold mb-2 text-gray-800">Response from Kafka Connect:</h3>
                     <pre className="whitespace-pre-wrap break-words text-xs">
                         {JSON.stringify(response, null, 2)}
                     </pre>
@@ -62,13 +62,23 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
 
             <div className="flex justify-between mt-6">
                 <button onClick={prevStep} className="bg-gray-300 px-4 py-2 rounded">Back</button>
-                <button
-                    onClick={handleConfirm}
-                    disabled={loading}
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-                >
-                    {loading ? 'Submitting...' : 'Add Connector'}
-                </button>
+
+                {response ? (
+                    <button
+                        onClick={closeModal}
+                        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                    >
+                        ✅ Finish
+                    </button>
+                ) : (
+                    <button
+                        onClick={handleConfirm}
+                        disabled={loading}
+                        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+                    >
+                        {loading ? 'Submitting...' : 'Add Connector'}
+                    </button>
+                )}
             </div>
         </div>
     );

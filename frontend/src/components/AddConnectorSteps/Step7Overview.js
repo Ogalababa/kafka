@@ -1,3 +1,4 @@
+// src/components/AddConnectorSteps/Step7Overview.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -65,7 +66,10 @@ const Step7Overview = ({ formData, prevStep, closeModal }) => {
 
                 {response ? (
                     <button
-                        onClick={closeModal}
+                        onClick={() => {
+                            console.log('✅ Finish clicked');
+                            closeModal();
+                        }}
                         className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
                     >
                         ✅ Finish

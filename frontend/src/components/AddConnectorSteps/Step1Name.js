@@ -1,7 +1,7 @@
 // src/components/AddConnectorSteps/Step1Name.js
 import React from 'react';
 
-const Step1Name = ({ formData, setFormData, nextStep }) => {
+const Step1Name = ({ formData, setFormData, nextStep, closeModal }) => {
     const handleChange = (e) => {
         setFormData({ ...formData, connectorName: e.target.value });
     };
@@ -23,6 +23,7 @@ const Step1Name = ({ formData, setFormData, nextStep }) => {
             >
                 Next
             </button>
+            <button onClick={closeModal} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
         </div>
     );
 };
